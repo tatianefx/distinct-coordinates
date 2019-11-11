@@ -22,8 +22,7 @@ try:
         for (i, line) in enumerate(f):
             array = line.split()
 
-            # Number of columns where the coordinates are in the file
-            if len(array) == 11:
+            if line != 'END\n':
                 # x coordinate column
                 x = array[5]
                 # y coordinate column
