@@ -51,5 +51,9 @@ try:
         for value in final_file:
             out.write(str(value))
 
+    # Finish
+    final_message = "Generates file distinct-coordinates-" + file_name
+    print(final_message)
+
 except FileNotFoundError:
     print("ERROR: File not found")
