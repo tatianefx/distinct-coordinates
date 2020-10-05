@@ -22,18 +22,22 @@ try:
         for (i, line) in enumerate(f):
             array = line.split()
 
-            if line != 'END\n':
-                # x coordinate column
-                x = array[5]
-                # y coordinate column
-                y = array[6]
-                # z coordinate column
-                z = array[7]
+            if 'END' not in line and '\n' not in line:
+                try:
+                    # x coordinate column
+                    x = array[5]
+                    # y coordinate column
+                    y = array[6]
+                    # z coordinate column
+                    z = array[7]
 
-                key = x + y + z
+                    key = x + y + z
 
-                # Dictionary to save distinct values by coordinates
-                dictionary[key] = line
+                    # Dictionary to save distinct values by coordinates
+                    dictionary[key] = line
+
+                except IndexError:
+                    print("Index out of range at line: " + str(i))
 
             else:
                 # Saves other information
